@@ -7,3 +7,8 @@ COMMON = re.compile(
     r'"(?P<method>\S+) (?P<path>\S+) (?P<proto>[^"]+)" '
     r'(?P<status>\d{3}) (?P<size>\d+|-)'
 )
+
+# Combined Log Format: CLF plus referrer and user agent.
+COMBINED = re.compile(
+    COMMON.pattern + r' "(?P<referrer>[^"]*)" "(?P<agent>[^"]*)"'
+)
