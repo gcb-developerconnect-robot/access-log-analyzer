@@ -1,9 +1,9 @@
 """Known access log formats for the analyzer."""
 import re
 
-# Apache/Nginx Common Log Format (CLF).
+# Apache/Nginx Common Log Format (CLF). Client IPs may be IPv4 or IPv6.
 COMMON = re.compile(
-    r'^(?P<ip>\S+) \S+ \S+ \[(?P<time>[^\]]+)\] '
+    r'^(?P<ip>[0-9A-Fa-f:.]+) \S+ \S+ \[(?P<time>[^\]]+)\] '
     r'"(?P<method>\S+) (?P<path>\S+) (?P<proto>[^"]+)" '
     r'(?P<status>\d{3}) (?P<size>\d+|-)'
 )
