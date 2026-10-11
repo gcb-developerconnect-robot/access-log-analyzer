@@ -25,3 +25,12 @@ print("Status Counts:", status_counts)
 ```bash
 pytest test_analyzer.py
 ```
+
+## Supported Log Formats
+
+See `log_formats.py`:
+
+- `COMMON`: Apache/Nginx Common Log Format.
+- `COMBINED`: Common Log Format plus referrer and user agent.
+
+A sample log lives in `samples/access.log`.
