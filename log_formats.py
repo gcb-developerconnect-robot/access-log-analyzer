@@ -12,3 +12,16 @@ COMMON = re.compile(
 COMBINED = re.compile(
     COMMON.pattern + r' "(?P<referrer>[^"]*)" "(?P<agent>[^"]*)"'
 )
+
+FORMATS = {
+    'common': COMMON,
+    'combined': COMBINED,
+}
+
+
+def get_format(name: str) -> re.Pattern:
+  """Returns the compiled regex for a named log format."""
+  try:
+    return FORMATS[name]
+  except KeyError:
+    raise ValueError(f'unknown log format: {name}') from None
