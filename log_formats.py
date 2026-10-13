@@ -24,4 +24,4 @@ def get_format(name: str) -> re.Pattern:
   try:
     return FORMATS[name]
   except KeyError:
-    raise ValueError(f'unknown log format: {name}') from None
+    raise ValueError(f'unknown log format {name!r}; want one of {sorted(FORMATS)}') from None
