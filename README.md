@@ -34,3 +34,7 @@ See `log_formats.py`:
 - `COMBINED`: Common Log Format plus referrer and user agent.
 
 A sample log lives in `samples/access.log`.
+
+## Roadmap
+
+- JSON log output (abandoned in favor of a separate tool).
